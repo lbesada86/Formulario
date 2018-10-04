@@ -161,18 +161,22 @@ class App extends Component {
             </ValidatorForm>
           </div>
        {tipo === 10 &&
-        <CreditCardInput
+       <CreditCardInput
         cardCVCInputRenderer={({ handleCardCVCChange, props }) => (
           <input
             {...props}
-            onChange={handleCardCVCChange(e => console.log('cvc change', e))}
+            onChange={handleCardCVCChange(e =>
+              this.setState({ cvc: e.target.value })
+              // console.log('cvc change', e)
+          )}
           />
         )}
         cardExpiryInputRenderer={({ handleCardExpiryChange, props }) => (
           <input
             {...props}
             onChange={handleCardExpiryChange(e =>
-              console.log('expiry change', e)
+              this.setState({ expiry: e.target.value })
+              // console.log('expiry change', e)
             )}
           />
         )}
@@ -180,7 +184,8 @@ class App extends Component {
           <input
             {...props}
             onChange={handleCardNumberChange(e =>
-              console.log('number change', e)
+              this.setState({ expiry: e.target.value })
+              // console.log('number change', e)
             )}
           />
         )}
