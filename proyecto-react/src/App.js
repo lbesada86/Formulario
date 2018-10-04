@@ -184,7 +184,7 @@ class App extends Component {
           <input
             {...props}
             onChange={handleCardNumberChange(e =>
-              this.setState({ expiry: e.target.value })
+              this.setState({ cardNumber: e.target.value })
               // console.log('number change', e)
             )}
           />
